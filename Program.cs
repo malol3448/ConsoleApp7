@@ -41,6 +41,8 @@ namespace ConsoleApp7
                 element.Location = position;
                 element.Text = title;
                 Controls.Add(element);
+                var newvar = new NewClass();
+                newvar.Name = "";
             }
             private void ChangeFormColor(Color color) => BackColor = color;
             private void ChangeFormSize(int change)
