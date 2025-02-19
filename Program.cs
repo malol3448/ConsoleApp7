@@ -33,6 +33,8 @@ namespace ConsoleApp7
                 MouseLeave += (sender, e) => ChangeFormColor(_backColor);
                 MouseWheel += (object sender, MouseEventArgs e) => ChangeFormSize(e.Delta);
 
+                Button exitButton = CreateButton(new Size(60, 30), new Point(700, 500), "Выход");
+                exitButton.Click += (sender, e) => Application.Exit();
             }
 
             private void SetCommonParameters(Control element, Size size, Point position, string title)
@@ -43,6 +45,12 @@ namespace ConsoleApp7
                 Controls.Add(element);
                 var newvar = new NewClass();
                 newvar.Name = "";
+            }
+            private Button CreateButton(Size size, Point position, string title)
+            {
+                Button button = new Button();
+                SetCommonParameters(button, size, position, title);
+                return button;
             }
             private void ChangeFormColor(Color color) => BackColor = color;
             private void ChangeFormSize(int change)
